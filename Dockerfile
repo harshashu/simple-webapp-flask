@@ -1,5 +1,5 @@
 FROM python
-RUN apt-get update && apt-get install -y python python-pip
+COPY . /opt/app-code
 RUN pip install flask
-COPY app.py /opt/
-ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8080
+RUN pip install flask-mysql
+ENTRYPOINT FLASK_APP=/opt/app-code/app.py flask run --host=0.0.0.0
