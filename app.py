@@ -1,15 +1,12 @@
 import os
-from flask import Flask
-app = Flask(__name__)
-...
-...
+from flask import Flask, render_template
 
-color ="red"
+app = Flask(__name)
 
-@app.route("/")
-def main():
-   print(color)
-return render_template('hello.html', color=color)
+@app.route('/')
+def hello():
+    color = 'blue'
+    return render_template('hello.html', color=color)
 
 
 if __name__ == "__main__":
