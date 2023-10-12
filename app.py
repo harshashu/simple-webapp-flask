@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 app = Flask(__name__)
-color = os.environ.get('APP_COLOR') 
+color = "red" 
 
 @app.route("/")
 def main():
