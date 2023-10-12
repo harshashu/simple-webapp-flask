@@ -1,9 +1,7 @@
+import os
 from flask import Flask
 from flask import render_template
-import socket
-import random
-import os
-import argparse
+
 
 app = Flask(__name__)
 
@@ -27,7 +25,7 @@ COLOR = random.choice(["red", "green", "blue", "blue2", "darkblue", "pink"])
 @app.route("/")
 def main():
     # return 'Hello'
-    return render_template('hello.html', name=socket.gethostname(), color=color_codes[COLOR])
+    return render_template('hello.html',  color=color_codes[COLOR])
 
 
 if __name__ == "__main__":
